@@ -61,7 +61,6 @@ def route_message():
         message_list.append(msg)
         # 应该在这里保存 message_list
     header = 'HTTP/1.x 200 OK\r\nContent-Type: text/html\r\n'
-    # body = '<h1>消息版</h1>'
     body = template('html_basic.html')
     msgs = '<br>'.join([str(m) for m in message_list])
     body = body.replace('{{messages}}', msgs)
